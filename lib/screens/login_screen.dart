@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'safe_ride_screen.dart'; // Import the SafeRideScreen
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

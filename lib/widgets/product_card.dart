@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../providers/cart_provider.dart';
 
 class ProductCard extends StatelessWidget {
   final String imageUrl;
+  final String name;
   final double price;
   final String? description;
 
   const ProductCard({
     Key? key,
     required this.imageUrl,
+    required this.name,
     required this.price,
     this.description,
   }) : super(key: key);
@@ -50,7 +54,7 @@ class ProductCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         vertical: 0.5, horizontal: 1),
                     child: Text(
-                      'NICHE',
+                      name,
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -138,7 +142,15 @@ class ProductCard extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                 Provider.of<CartProvider>(context, listen: false).addItem({
+                  'name': name,
+                  'price': price.toInt(), // Example price
+                });
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Item added to cart!')),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF38BDF8), // Fix primary issue
                 shape: RoundedRectangleBorder(

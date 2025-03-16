@@ -11,7 +11,7 @@ import 'profile_screen.dart'; // Import the ProfileScreen
 import 'mens_selection_screen.dart'; // Import the MensSelectionScreen
 
 class SafeRideScreen extends StatelessWidget {
-  const SafeRideScreen({Key? key}) : super(key: key);
+  const SafeRideScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,16 +57,16 @@ class SafeRideScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       // Logo and brand name
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.snowboarding,
-                            color: const Color(0xFF2B8BE9),
+                            color: Color(0xFF2B8BE9),
                             size: 24,
                           ),
-                          const SizedBox(width: 8),
-                          const Text(
+                          SizedBox(width: 8),
+                          Text(
                             'SAFERIDE',
                             style: TextStyle(
                               color: Colors.white,

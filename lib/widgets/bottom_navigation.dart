@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BottomNavigation extends StatelessWidget {
-  const BottomNavigation({Key? key}) : super(key: key);
+  const BottomNavigation({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class BottomNavigation extends StatelessWidget {
   }
 
   Widget _buildNavIcon(IconData icon) {
-    return Container(
+    return SizedBox(
       width: 24,
       height: 24,
       child: Icon(

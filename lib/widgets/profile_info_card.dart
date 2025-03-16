@@ -5,10 +5,10 @@ class ProfileInfoCard extends StatelessWidget {
   final String title;
 
   const ProfileInfoCard({
-    Key? key,
+    super.key,
     required this.icon,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class ProfileInfoCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Container(
+          SizedBox(
             width: 24,
             height: 24,
             child: Icon(
@@ -35,7 +35,7 @@ class ProfileInfoCard extends StatelessWidget {
           Expanded(
             child: Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontFamily: 'Inter',
                 fontSize: 16,

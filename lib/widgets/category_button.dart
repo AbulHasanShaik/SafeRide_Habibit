@@ -5,10 +5,10 @@ class CategoryButton extends StatelessWidget {
   final VoidCallback? onTap;
 
   const CategoryButton({
-    Key? key,
+    super.key,
     required this.label,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

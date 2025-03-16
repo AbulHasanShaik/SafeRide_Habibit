@@ -5,10 +5,10 @@ class NavigationIconButton extends StatelessWidget {
   final VoidCallback? onTap;
 
   const NavigationIconButton({
-    Key? key,
+    super.key,
     required this.icon,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

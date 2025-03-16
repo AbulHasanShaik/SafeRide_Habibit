@@ -6,7 +6,7 @@ import '../widgets/navigation_icon_button.dart';
 import 'safe_ride_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     child: Center(
                       child: Text(
                         'Profile',
@@ -80,25 +80,25 @@ class ProfileScreen extends StatelessWidget {
                       const SizedBox(height: 24),
 
                       // Reward points card
-                      ProfileInfoCard(
+                      const ProfileInfoCard(
                         icon: Icons.card_giftcard,
                         title: 'Reward Points: 10204',
                       ),
 
                       // Name card
-                      ProfileInfoCard(
+                      const ProfileInfoCard(
                         icon: Icons.sentiment_satisfied_alt,
                         title: 'Name:',
                       ),
 
                       // Gender card
-                      ProfileInfoCard(
+                      const ProfileInfoCard(
                         icon: Icons.person,
                         title: 'Gender: Female',
                       ),
 
                       // Email card
-                      ProfileInfoCard(
+                      const ProfileInfoCard(
                         icon: Icons.mail,
                         title: 'Email:',
                       ),

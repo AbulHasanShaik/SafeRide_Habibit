@@ -6,7 +6,7 @@ import '../widgets/navigation_icon_button.dart'; // Import the NavigationIconBut
 import 'profile_screen.dart'; // Import the ProfileScreen
 
 class MensSelectionScreen extends StatelessWidget {
-  const MensSelectionScreen({Key? key}) : super(key: key);
+  const MensSelectionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +28,14 @@ class MensSelectionScreen extends StatelessWidget {
                           Navigator.pop(
                               context); // Go back to the previous screen
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.chevron_left,
-                          color: const Color(0xFF3B82F6),
+                          color: Color(0xFF3B82F6),
                           size: 24,
                         ),
                       ),
                       const SizedBox(width: 8),
-                      Text(
+                      const Text(
                         'Mens Selection',
                         style: TextStyle(
                           color: Colors.white,
@@ -49,44 +49,49 @@ class MensSelectionScreen extends StatelessWidget {
                   // Product list
                   Expanded(
                     child: ListView(
-                      children: [
+                      children: const [
                         ProductCard(
                           imageUrl:
                               'https://placehold.co/800x400/2a4365/2a4365',
+                          name: 'Product Name1',
                           price: 250,
                           description: null,
                         ),
-                        const SizedBox(height: 24),
+                        SizedBox(height: 24),
                         ProductCard(
                           imageUrl:
                               'https://placehold.co/800x400/2a4365/2a4365',
+                          name: 'Product Name5',
                           price: 250,
                           description: null,
                         ),
-                        const SizedBox(height: 24),
+                        SizedBox(height: 24),
                         ProductCard(
                           imageUrl:
                               'https://placehold.co/800x400/2a4365/2a4365',
+                          name: 'Product Name4',
                           price: 250,
                           description: null,
                         ),
-                        const SizedBox(height: 24),
+                        SizedBox(height: 24),
                         ProductCard(
                           imageUrl:
                               'https://placehold.co/800x400/2a4365/2a4365',
+                          name: 'Product Name3',
                           price: 250,
                           description: null,
                         ),
-                        const SizedBox(height: 24),
+                        SizedBox(height: 24),
                         ProductCard(
                           imageUrl:
                               'https://placehold.co/800x400/2a4365/2a4365',
+                          name: 'Product Name2',
                           price: 250,
                           description:
                               'This board is a cool board that has blue and green tree that blah blag more description',
                         ),
                         // Add extra space at the bottom for the navigation bar
-                        const SizedBox(height: 80),
+                        SizedBox(height: 80),
                       ],
                     ),
                   ),
