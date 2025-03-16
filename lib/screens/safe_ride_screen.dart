@@ -24,26 +24,26 @@ class SafeRideScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Back button
-              GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF2B8BE9),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: const Center(
-                    child: Icon(
-                      Icons.chevron_left,
-                      color: Colors.white,
-                      size: 24,
-                    ),
-                  ),
-                ),
-              ),
+              // GestureDetector(
+              //   onTap: () {
+              //     Navigator.pop(context);
+              //   },
+              //   child: Container(
+              //     width: 40,
+              //     height: 40,
+              //     decoration: BoxDecoration(
+              //       color: const Color(0xFF2B8BE9),
+              //       borderRadius: BorderRadius.circular(8),
+              //     ),
+              //     child: const Center(
+              //       child: Icon(
+              //         Icons.chevron_left,
+              //         color: Colors.white,
+              //         size: 24,
+              //       ),
+              //     ),
+              //   ),
+              // ),
               const SizedBox(height: 16),
 
               // Main content card
