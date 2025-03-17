@@ -105,7 +105,7 @@ class SafeRideScreen extends StatelessWidget {
                                 physics: const NeverScrollableScrollPhysics(),
                                 children: [
                                   CategoryButton(
-                                    label: 'Men',
+                                    label: 'Mens',
                                     onTap: () {
                                       // Navigate to MensSelectionScreen
                                       Navigator.push(
@@ -118,7 +118,7 @@ class SafeRideScreen extends StatelessWidget {
                                     },
                                   ),
                                   CategoryButton(
-                                    label: 'Women',
+                                    label: 'Womens',
                                     onTap: () {
                                       // Navigate to WomensSelectionScreen
                                       Navigator.push(
@@ -131,7 +131,7 @@ class SafeRideScreen extends StatelessWidget {
                                     },
                                   ),
                                   CategoryButton(
-                                    label: 'Boy',
+                                    label: 'Boys',
                                     onTap: () {
                                       // Navigate to BoyssSelectionScreen
                                       Navigator.push(
@@ -163,7 +163,7 @@ class SafeRideScreen extends StatelessWidget {
                             // Sales and Accessories buttons
                             const SizedBox(height: 16),
                             CategoryButton(
-                              label: 'Sales',
+                              label: 'Sales and Deals',
                               onTap: () {
                                 // Navigate to DealsandSalesSelectionScreen
                                 Navigator.push(

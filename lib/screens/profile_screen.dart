@@ -1,12 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:saferide_app_ui_3710154493/screens/cart_selection_screen.dart';
-import '../widgets/profile_info_card.dart';
 import '../widgets/bottom_navigation.dart';
 import '../widgets/navigation_icon_button.dart';
 import 'safe_ride_screen.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
+
+  @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  final TextEditingController _nameController =
+      TextEditingController(text: "Emily Thompson");
+  final TextEditingController _genderController =
+      TextEditingController(text: "Female");
+  final TextEditingController _emailController =
+      TextEditingController(text: "emily@example.com");
+  final TextEditingController _dobController =
+      TextEditingController(text: "01/01/1990");
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +34,21 @@ class ProfileScreen extends StatelessWidget {
               color: const Color(0xFF1C1F2E),
               child: Row(
                 children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF2C3444),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: const Center(
-                      child: Icon(
-                        Icons.chevron_left,
-                        color: Colors.white,
-                        size: 20,
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF2C3444),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: const Center(
+                        child: Icon(
+                          Icons.chevron_left,
+                          color: Colors.white,
+                          size: 20,
+                        ),
                       ),
                     ),
                   ),
@@ -49,7 +65,6 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // Empty container to balance the back button
                   const SizedBox(width: 40),
                 ],
               ),
@@ -63,45 +78,41 @@ class ProfileScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       const SizedBox(height: 24),
+
                       // Profile picture
                       Container(
                         width: 120,
                         height: 120,
-                        clipBehavior: Clip
-                            .hardEdge, // Use clipBehavior instead of overflow
+                        clipBehavior: Clip.hardEdge,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(60),
                         ),
-                        child: Image.network(
-                          'https://cdn.builder.io/api/v1/image/assets/TEMP/38cf0748d9552493029f613a223d0c5254b3d0bd',
+                        child: Image.asset(
+                          'assets/icons/EmilyThompson.png',
                           fit: BoxFit.cover,
                         ),
                       ),
                       const SizedBox(height: 24),
 
                       // Reward points card
-                      const ProfileInfoCard(
-                        icon: Icons.card_giftcard,
-                        title: 'Reward Points: 10204',
-                      ),
+                      _buildProfileInfoCard(
+                          Icons.card_giftcard, "Reward Points: 10204", false),
 
-                      // Name card
-                      const ProfileInfoCard(
-                        icon: Icons.sentiment_satisfied_alt,
-                        title: 'Name:',
-                      ),
+                      // Editable Name
+                      _buildEditableField(Icons.sentiment_satisfied_alt, "Name",
+                          _nameController),
 
-                      // Gender card
-                      const ProfileInfoCard(
-                        icon: Icons.person,
-                        title: 'Gender: Female',
-                      ),
+                      // Editable Gender
+                      _buildEditableField(
+                          Icons.person, "Gender", _genderController),
 
-                      // Email card
-                      const ProfileInfoCard(
-                        icon: Icons.mail,
-                        title: 'Email:',
-                      ),
+                      // Editable Email
+                      _buildEditableField(
+                          Icons.mail, "Email", _emailController),
+
+                      // Editable Date of Birth
+                      _buildEditableField(
+                          Icons.cake, "Date of Birth", _dobController),
                     ],
                   ),
                 ),
@@ -109,67 +120,84 @@ class ProfileScreen extends StatelessWidget {
             ),
 
             // Bottom navigation
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                padding: const EdgeInsets.all(24.0),
-                decoration: const BoxDecoration(
-                  color: Color(0xFF1A1B26),
-                  border: Border(
-                    top: BorderSide(
-                      color: Color(0xFF3A3D42),
-                      width: 1,
-                    ),
+            Container(
+              padding: const EdgeInsets.all(24.0),
+              decoration: const BoxDecoration(
+                color: Color(0xFF1A1B26),
+                border: Border(
+                  top: BorderSide(
+                    color: Color(0xFF3A3D42),
+                    width: 1,
                   ),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    // Person Icon Button
-                    NavigationIconButton(
-                      icon: Icons.person,
-                      onTap: () {
-                        // Navigate to ProfileScreen
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ProfileScreen(),
-                          ),
-                        );
-                      },
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  NavigationIconButton(
+                    icon: Icons.person,
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProfileScreen()),
                     ),
-                    // Home Icon Button
-                    NavigationIconButton(
-                      icon: Icons.home,
-                      onTap: () {
-                        // Navigate to SaferideScreen
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SafeRideScreen(),
-                          ),
-                        );
-                      },
+                  ),
+                  NavigationIconButton(
+                    icon: Icons.home,
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SafeRideScreen()),
                     ),
-                    NavigationIconButton(
-                      icon: Icons.shopping_cart,
-                      onTap: () {
-                        // Navigate to CartSelectionScreen
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const CartSelectionScreen(),
-                          ),
-                        );
-                      },
+                  ),
+                  NavigationIconButton(
+                    icon: Icons.shopping_cart,
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CartSelectionScreen()),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildProfileInfoCard(IconData icon, String title, bool isEditable) {
+    return Card(
+      color: const Color(0xFF2C3444),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      child: ListTile(
+        leading: Icon(icon, color: Colors.white),
+        title: Text(
+          title,
+          style: const TextStyle(color: Colors.white, fontSize: 16),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildEditableField(
+      IconData icon, String label, TextEditingController controller) {
+    return Card(
+      color: const Color(0xFF2C3444),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      child: ListTile(
+        leading: Icon(icon, color: Colors.white),
+        title: TextField(
+          controller: controller,
+          style: const TextStyle(color: Colors.white, fontSize: 16),
+          decoration: InputDecoration(
+            labelText: label,
+            labelStyle: const TextStyle(color: Colors.white70),
+            border: InputBorder.none,
+          ),
         ),
       ),
     );
