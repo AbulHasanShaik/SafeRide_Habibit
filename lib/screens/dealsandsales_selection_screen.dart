@@ -52,44 +52,48 @@ class DealsandSalesSelectionScreen extends StatelessWidget {
                       children: const [
                         ProductCard(
                           imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
-                          description: null,
-                        ),
-                        SizedBox(height: 24),
-                        ProductCard(
-                          imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
-                          description: null,
-                        ),
-                        SizedBox(height: 24),
-                        ProductCard(
-                          imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
-                          description: null,
-                        ),
-                        SizedBox(height: 24),
-                        ProductCard(
-                          imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
-                          description: null,
-                        ),
-                        SizedBox(height: 24),
-                        ProductCard(
-                          imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
+                              'https://original.accentuate.io/6788492623941/1666133915825/blndrs_Punkster_Planet_Funk_snow_Lfstyl_internal%C2%A9_2289_1100x550.jpg?v=1666133915825',
+                          name: 'Punkster Goggles 2 for \$100',
+                          price: 100,
                           description:
-                              'This board is a cool board that has blue and green tree that blah blag more description',
+                              'These stylish youth snow goggles are tailor-made for anyone 9 to 14 years old. Scratch- and smudge-resistant lens coatings, three-layer hypoallergenic face foam',
                         ),
+                        SizedBox(height: 24),
+                        ProductCard(
+                          imageUrl:
+                              'https://images.evo.com/imgp/700/253984/1108391/clone.jpg',
+                          name: 'Salomon Lotus Snowboard 30% for students',
+                          price: 175,
+                          description:
+                              'The Salomon Lotus Snowboard is like the best teacher you ever had: it has a gentle, easygoing personality',
+                        ),
+                        SizedBox(height: 24),
+                        ProductCard(
+                          imageUrl:
+                              'https://www.dopesnow.com/images/H2528_01_PMVNlE4.jpg?w=358&dpr=2',
+                          name:
+                              'Snowboard Helmet Mips 10% off for first time buyers',
+                          price: 54,
+                          description:
+                              'An integrated visor simplifies goggle wear and offers terrain-defining clarity.',
+                        ),
+                        // SizedBox(height: 24),
+                        // ProductCard(
+                        //   imageUrl:
+                        //       'https://placehold.co/800x400/2a4365/2a4365',
+                        //   name: 'Product Name1',
+                        //   price: 250,
+                        //   description: null,
+                        // ),
+                        // SizedBox(height: 24),
+                        // ProductCard(
+                        //   imageUrl:
+                        //       'https://placehold.co/800x400/2a4365/2a4365',
+                        //   name: 'Product Name1',
+                        //   price: 250,
+                        //   description:
+                        //       'This board is a cool board that has blue and green tree that blah blag more description',
+                        // ),
                         // Add extra space at the bottom for the navigation bar
                         SizedBox(height: 80),
                       ],
