@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/cart_provider.dart';
 import 'checkout_screen.dart'; // Import the checkout page
+import '../widgets/navigation_icon_button.dart'; // Import the NavigationIconButton
+import 'package:saferide_app_ui_3710154493/screens/safe_ride_screen.dart';
+import 'profile_screen.dart'; // Import the ProfileScreen
+
 
 class CartSelectionScreen extends StatelessWidget {
   const CartSelectionScreen({super.key});
@@ -85,6 +89,67 @@ class CartSelectionScreen extends StatelessWidget {
                 child: const Center(
                   child: Text('Proceed to Checkout',
                       style: TextStyle(fontSize: 18, color: Colors.white)),
+                ),
+              ),
+            ),
+             // Bottom navigation
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Container(
+                padding: const EdgeInsets.all(24.0),
+                decoration: const BoxDecoration(
+                  color: Color(0xFF1A1B26),
+                  border: Border(
+                    top: BorderSide(
+                      color: Color(0xFF3A3D42),
+                      width: 1,
+                    ),
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    // Person Icon Button
+                    NavigationIconButton(
+                      icon: Icons.person,
+                      onTap: () {
+                        // Navigate to ProfileScreen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ProfileScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                    // Home Icon Button
+                    NavigationIconButton(
+                      icon: Icons.home,
+                      onTap: () {
+                        // Navigate to SaferideScreen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SafeRideScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                    NavigationIconButton(
+                      icon: Icons.shopping_cart,
+                      onTap: () {
+                        // Navigate to CartSelectionScreen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const CartSelectionScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
                 ),
               ),
             ),
