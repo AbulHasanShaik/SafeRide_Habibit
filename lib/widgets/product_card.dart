@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/cart_provider.dart';
 
-class ProductCard extends StatelessWidget {
+class ProductCard extends StatefulWidget {
   final String imageUrl;
   final String name;
   final double price;
@@ -15,6 +15,13 @@ class ProductCard extends StatelessWidget {
     required this.price,
     this.description,
   }) : super(key: key);
+
+  @override
+  _ProductCardState createState() => _ProductCardState();
+}
+
+class _ProductCardState extends State<ProductCard> {
+  String selectedSize = 'M'; // Default size selection
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +47,7 @@ class ProductCard extends StatelessWidget {
                 // Product image
                 Positioned.fill(
                   child: Image.network(
-                    imageUrl,
+                    widget.imageUrl,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -54,8 +61,8 @@ class ProductCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         vertical: 0.5, horizontal: 1),
                     child: Text(
-                      name,
-                      style: TextStyle(
+                      widget.name,
+                      style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -69,12 +76,12 @@ class ProductCard extends StatelessWidget {
           const SizedBox(height: 16),
 
           // Description (if provided)
-          if (description != null) ...[
+          if (widget.description != null) ...[
             Text(
-              description!,
-              style: TextStyle(
+              widget.description!,
+              style: const TextStyle(
                 fontSize: 14,
-                color: const Color(0xFF9CA3AF),
+                color: Color(0xFF9CA3AF),
               ),
             ),
             const SizedBox(height: 16),
@@ -86,51 +93,43 @@ class ProductCard extends StatelessWidget {
             children: [
               // Price
               Text(
-                'Price: \$${price.toInt()}',
-                style: TextStyle(
+                'Price: \$${widget.price.toInt()}',
+                style: const TextStyle(
                   fontSize: 18,
                   color: Colors.white,
                 ),
               ),
 
-              // Size selection
+              // Size selection dropdown
               Row(
                 children: [
-                  Text(
-                    'Size',
+                  const Text(
+                    'Size:',
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.white,
                     ),
                   ),
                   const SizedBox(width: 8),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: const Color(0xFF4B5563),
-                      ),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8,
-                      vertical: 4,
-                    ),
-                    child: Row(
-                      children: [
-                        Text(
-                          'Select size',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Icon(
-                          Icons.close,
-                          color: Colors.white,
-                          size: 16,
-                        ),
-                      ],
-                    ),
+                  DropdownButton<String>(
+                    value: selectedSize,
+                    dropdownColor: const Color(0xFF2A2C36),
+                    style: const TextStyle(color: Colors.white),
+                    underline: Container(), // Remove default underline
+                    icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
+                    items: ['S', 'M', 'L'].map((String size) {
+                      return DropdownMenuItem<String>(
+                        value: size,
+                        child: Text(size),
+                      );
+                    }).toList(),
+                    onChanged: (String? newSize) {
+                      if (newSize != null) {
+                        setState(() {
+                          selectedSize = newSize;
+                        });
+                      }
+                    },
                   ),
                 ],
               ),
@@ -143,26 +142,25 @@ class ProductCard extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                 Provider.of<CartProvider>(context, listen: false).addItem({
-                  'name': name,
-                  'price': price.toInt(), // Example price
+                Provider.of<CartProvider>(context, listen: false).addItem({
+                  'name': widget.name,
+                  'price': widget.price.toInt(),
+                  'size': selectedSize, // Include selected size in cart
                 });
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Item added to cart!')),
+                  SnackBar(content: Text('${widget.name} ($selectedSize) added to cart!')),
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF38BDF8), // Fix primary issue
+                backgroundColor: const Color(0xFF38BDF8),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
                 padding: const EdgeInsets.symmetric(vertical: 8),
               ),
-              child: Text(
+              child: const Text(
                 'Add to cart',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
+                style: TextStyle(color: Colors.white),
               ),
             ),
           ),
@@ -171,3 +169,4 @@ class ProductCard extends StatelessWidget {
     );
   }
 }
+

@@ -52,46 +52,46 @@ class AccessoriesSelectionScreen extends StatelessWidget {
                       children: const [
                         ProductCard(
                           imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
-                          description: null,
+                              'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSCHo84wAlHEc8kbxKqnlMY6omEk8XKDUEvtHDNtfAt8JuJyhT8gey_2d2yD7hk7959cR6EvKvoVl4ozLPTKiaXk_0104BvS31IRdxkceheLa0E0UkjLmKvzw',
+                          name: 'snowboard Training Board Bindings',
+                          price: 15,
+                          description: 'our Training Bindings are equipped with a quick entry buckle and ladder system plus a velcro toe strap for ease of use to help you stay locked in.',
                         ),
                         SizedBox(height: 24),
                         ProductCard(
                           imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
-                          description: null,
+                              'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQUSpZDf11rPXgGDdJgbLUEXVjnYj_eMM6p_YdDhxNwUleKaoLpF3w5X-kzmPSnsoHLSKQkH7vYcYxGW-1zh2qEU7tL9T7z2wmUtaT8r8E4qsgZ8MqA6Lj7-6M',
+                          name: 'Padded Snowboard Bag',
+                          price: 35,
+                          description: 'Our snowboard bags are built with spacious compartments, internal padding, and an additional zippered front pocket,',
                         ),
                         SizedBox(height: 24),
-                        ProductCard(
-                          imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
-                          description: null,
-                        ),
-                        SizedBox(height: 24),
-                        ProductCard(
-                          imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
-                          description: null,
-                        ),
-                        SizedBox(height: 24),
-                        ProductCard(
-                          imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
-                          description:
-                              'This board is a cool board that has blue and green tree that blah blag more description',
-                        ),
-                        // Add extra space at the bottom for the navigation bar
-                        SizedBox(height: 80),
+                        // ProductCard(
+                        //   imageUrl:
+                        //       'https://placehold.co/800x400/2a4365/2a4365',
+                        //   name: 'Product Name1',
+                        //   price: 250,
+                        //   description: null,
+                        // ),
+                        // SizedBox(height: 24),
+                        // ProductCard(
+                        //   imageUrl:
+                        //       'https://placehold.co/800x400/2a4365/2a4365',
+                        //   name: 'Product Name1',
+                        //   price: 250,
+                        //   description: null,
+                        // ),
+                        // SizedBox(height: 24),
+                        // ProductCard(
+                        //   imageUrl:
+                        //       'https://placehold.co/800x400/2a4365/2a4365',
+                        //   name: 'Product Name1',
+                        //   price: 250,
+                        //   description:
+                        //       'This board is a cool board that has blue and green tree that blah blag more description',
+                        // ),
+                        // // Add extra space at the bottom for the navigation bar
+                        // SizedBox(height: 80),
                       ],
                     ),
                   ),

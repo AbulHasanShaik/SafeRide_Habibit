@@ -52,43 +52,43 @@ class WomensSelectionScreen extends StatelessWidget {
                       children: const [
                         ProductCard(
                           imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
-                          description: null,
+                              'https://www.dopesnow.com/images/H1350_01_JY6Acbu.jpg?w=525&dpr=2',
+                          name: 'Jacket Women Violet',
+                          price: 199,
+                          description: 'Easy access pocket made specifically for phones with internal headphone cord outlet',
                         ),
                         SizedBox(height: 24),
                         ProductCard(
                           imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
-                          description: null,
+                              'https://www.dopesnow.com/images/H2424_01_unaxC3l.jpg?w=525&dpr=2',
+                          name: 'Snow Mittens Soft Pink',
+                          price: 69,
+                          description: 'The improved Ace mittens are designed for all-day comfort, balancing the use of water resistant and breathable materials for longterm performance.',
                         ),
                         SizedBox(height: 24),
                         ProductCard(
                           imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
-                          description: null,
+                              'https://www.dopesnow.com/images/H2485_women_01_17hRyjd.jpg?w=525&dpr=2',
+                          name: 'Cozy Facemask Green',
+                          price: 19,
+                          description: 'The Cozy Hood from Dope is a revolution in neck warmers. Made from our super soft 250gsm 100% recycled polyester fleece, this thing will keep you toasty all day long!',
                         ),
                         SizedBox(height: 24),
                         ProductCard(
                           imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
-                          description: null,
+                              'https://www.dopesnow.com/images/H3009_01_1ZC1KpD.jpg?w=525&dpr=2',
+                          name: 'Fleece Hoodie Women',
+                          price: 50,
+                          description: 'Most people think that the hoodie has reached its evolutionary peak. That it can’t get any better. But they just haven’t met the Cozy II yet. Made with our awesome 100% recycled polyester fleece',
                         ),
                         SizedBox(height: 24),
                         ProductCard(
                           imageUrl:
-                              'https://placehold.co/800x400/2a4365/2a4365',
-                          name: 'Product Name1',
-                          price: 250,
+                              'https://www.dopesnow.com/images/H3190_01_JhADhrU.jpg?w=525&dpr=2',
+                          name: 'Crest 14 Backpack Dune',
+                          price: 109,
                           description:
-                              'This board is a cool board that has blue and green tree that blah blag more description',
+                              'The Crest ski and snowboard bag is the ultimate companion for anyone looking to go further this season. With a compact 14L capacity, this backpack is ideal for single-day adventures and is packed with tech and features.',
                         ),
                         // Add extra space at the bottom for the navigation bar
                         SizedBox(height: 80),
